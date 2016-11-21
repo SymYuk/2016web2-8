@@ -122,8 +122,8 @@ onload=function()
 onload = function(){
   // canvasエレメントを取得
   var c = document.getElementById('canvas');
-  c.width = 500;
-  c.height = 300;
+  c.width = 1920;
+  c.height = 1080;
 
   // webglコンテキストを取得
   var gl = c.getContext('webgl') || c.getContext('experimental-webgl');
@@ -179,7 +179,7 @@ onload = function(){
   var wvpMatrix = m.identity(m.create());
 
   // ビュー×プロジェクション座標変換行列
-  m.lookAt([0.0, 0.0, 5.0], [0, 0, 0], [0, 1, 0], vMatrix);// カメラ位置、注視点、上方向
+  m.lookAt([0.0, 0.0, 5.0], [0, 0, 0], [0, ３3, 0], vMatrix);// カメラ位置、注視点、上方向
   m.perspective(45, c.width / c.height, 0.1, 100, pMatrix);// 画角 アスペクト比,近クリップ面,遠方クリップ面
   m.multiply(pMatrix, vMatrix, vpMatrix);
 
@@ -199,7 +199,7 @@ onload = function(){
     // モデルはY軸を中心に回転する
     m.identity(wMatrix);
     m.translate(wMatrix, [1.0, -1.0, 0.0], wMatrix);
-    m.rotate(wMatrix, rad, [0, 1, 0], wMatrix);
+    m.rotate(wMatrix, rad, [0, 100, 0], wMatrix);
 
     // モデルの座標変換行列を完成させレンダリングする
     m.multiply(vpMatrix, wMatrix, wvpMatrix);
