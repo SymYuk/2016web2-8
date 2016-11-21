@@ -40,7 +40,7 @@ onload=function()
 	{
 		var vbo=gl.createCuffer();
 		gl.bindBuffer(gl.ARRAY_BUFFER,vbo);
-		gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(data,gl.STATIC_DRAW);
+		gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(data),gl.STATIC_DRAW);
 		gl.bindBuffer(gl.ARRAY_BUFFER,null);
 		return vbo;
 	}
