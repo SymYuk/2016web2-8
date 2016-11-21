@@ -213,7 +213,7 @@ onload = function(){
     count++;
 
     // ループのために再帰呼び出し
-    setTimeout(arguments.callee, 1000 / 2);
+    setTimeout(arguments.callee, 1000 / 500);
   })();
 
   // シェーダを生成する関数
